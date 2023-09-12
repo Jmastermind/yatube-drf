@@ -1,0 +1,23 @@
+[tool.black]
+include = '\.pyi?$'
+extend-exclude = '''
+(
+    .venv
+    | migrations
+    | __
+    | /\.
+)
+'''
+line_length = 79
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+src_paths = ["yatube_api"]
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true
+
+[tool.django-stubs]
+django_settings_module = "yatube_api.settigns"
